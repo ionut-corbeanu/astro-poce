@@ -1,0 +1,71 @@
+---
+import { log } from "console";
+
+const { title, subtitle, id } = Astro.props
+---
+
+<button class="left-ta_item-accordion" onClick={() => handleClick(id)}>
+  <div class="left-ta_item-accordion-subtitle">
+    <span>{subtitle}</span>
+  </div>
+  <div class="left-ta-item-accordion-title">
+    <span>{title}</span> 
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+    </svg>
+  </div>
+</button>
+
+
+
+<script>
+  function handleClick(id){
+    alert(id);
+  }
+</script>
+<style>
+  button:hover{
+	cursor: pointer;
+}
+.left-ta_item-accordion {
+    border: 0;
+    background: transparent;
+    display: block;
+    width: 100%;
+}
+.left-ta_item-accordion-subtitle {
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    margin-left: 3.125rem;
+    text-align: left;
+}
+
+.left-ta_item-accordion-subtitle span {
+    color: #c50084;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.left-ta_item-accordion .left-ta-item-accordion-title {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.left-ta-item-accordion-title {
+    display: flex;
+    align-items: center;
+    margin-left: 3.125rem;
+    justify-content: space-between;
+    padding-right: 0.6rem;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.left-ta-item-accordion-title span {
+    font-size: 1rem;
+}
+
+.left-ta-item-accordion-title svg {
+    width: 19px;
+}
+</style>
