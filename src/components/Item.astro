@@ -4,7 +4,7 @@ import { log } from "console";
 const { title, subtitle, id } = Astro.props
 ---
 
-<button class="left-ta_item-accordion" onClick={() => handleClick(id)}>
+<a href=`/post/${id}` class="left-ta_item-accordion">
   <div class="left-ta_item-accordion-subtitle">
     <span>{subtitle}</span>
   </div>
@@ -14,15 +14,8 @@ const { title, subtitle, id } = Astro.props
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
     </svg>
   </div>
-</button>
+</a>
 
-
-
-<script>
-  function handleClick(id){
-    alert(id);
-  }
-</script>
 <style>
   button:hover{
 	cursor: pointer;
@@ -32,6 +25,8 @@ const { title, subtitle, id } = Astro.props
     background: transparent;
     display: block;
     width: 100%;
+    color: #444;
+    text-decoration:none;
 }
 .left-ta_item-accordion-subtitle {
     padding-top: 1rem;
